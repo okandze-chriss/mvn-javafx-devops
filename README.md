@@ -2,8 +2,8 @@
 
 ---
 ## Construct the Application
-[x] Create a maven quickstart   
-[x] Adding javafx dependency
+- [x] Create a maven quickstart   
+- [x] Adding javafx dependency
 - add in dependencies tag of pom.xml
 ```
      <dependency>
@@ -23,8 +23,8 @@
         </configuration>
       </plugin>
 ```
-[x] Implement the main java class   
-[x] [In the command line run](#run-app) : mvn javafx:run
+- [x] Implement the main java class   
+- [x] [In the command line run](#run-app) : mvn javafx:run
 > [!NOTE]  
 > Make sure Maven is installed on your machine to use the mvn command
 
@@ -35,6 +35,7 @@
 1. Hello World Scene Graph
 
 This is the current project javafx app structure
+
 ![Hello World Scene Graph](https://docs.oracle.com/javafx/2/get_started/img/helloworld_scenegraph.png)
 # Running application process
 ## Run app 
