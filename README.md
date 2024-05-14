@@ -35,6 +35,7 @@
 1. Hello World Scene Graph
 
 This is the current project javafx app structure
+
 ![Hello World Scene Graph](https://docs.oracle.com/javafx/2/get_started/img/helloworld_scenegraph.png)
 # Running application process
 ## Run app 
