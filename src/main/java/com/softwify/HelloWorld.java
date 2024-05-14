@@ -1,8 +1,6 @@
 package com.softwify;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -27,8 +25,8 @@ public class HelloWorld extends Application
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
-        stage.setTitle("Hello World!");
+    public void start(Stage stage) {
+        stage.setTitle("Hello World app");
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
 
@@ -41,12 +39,9 @@ public class HelloWorld extends Application
 
 
         //event -> System.out.println("Hello World!")
-        btn.setOnAction(new EventHandler<>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-                stage.setScene(new Scene(root2, 300, 250));
-            }
+        btn.setOnAction(event -> {
+            LOGGER.info("Hello World!");
+            stage.setScene(new Scene(root2, 300, 250));
         });
 
         StackPane root = new StackPane();
