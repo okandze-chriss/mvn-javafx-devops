@@ -1,0 +1,55 @@
+services:
+
+  # Sonarqube service
+  sonar-service:
+    image: sonarqube:9.9-community
+    container_name: sonar-service-container
+    depends_on:
+      - sonar-db
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://sonar-db:5432/sonar
+      SONAR_JDBC_USERNAME: sonar
+      SONAR_JDBC_PASSWORD: sonar
+    command: sudo chmod 777 /opt/sonarqube/data && sudo chmod 777 /opt/sonarqube/extensions && sudo chmod 777 /opt/sonarqube/logs
+    volumes:
+      - sonar_data:/opt/sonarqube/data
+      - sonar_extensions:/opt/sonarqube/extensions
+      - sonar_logs:/opt/sonarqube/logs
+    ports:
+      - "9000:9000"
+
+  # Postgres service
+  sonar-db:
+    image: postgres:12
+    container_name: sonar-db-container
+    environment:
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+
+  # Jenkins service
+  jenkins:
+    image: jenkins/jenkins:lts
+    restart: always
+    privileged: true
+    user: root
+    ports:
+      - 8080:8080
+      - 50000:50000
+    container_name: jenkins
+    volumes:
+      - /home/ubuntu/jenkins_compose/jenkins_configuration:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  # App service
+  web:
+    build: .
+
+volumes:
+  sonar_data:
+  sonar_extensions:
+  sonar_logs:
+  postgresql:
+  postgresql_data:

@@ -6,6 +6,9 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.util.logging.Logger;
@@ -28,13 +31,24 @@ public class HelloWorld extends Application
         stage.setTitle("Hello World!");
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
+
+        Text helloWorld = new Text();
+        helloWorld.setText("Welcome to my Hello World App ");
+        helloWorld.setFont(Font.font("Verdana", FontWeight.BOLD, 16));
+
+        StackPane root2 = new StackPane();
+        root2.getChildren().add(helloWorld);
+
+
         //event -> System.out.println("Hello World!")
         btn.setOnAction(new EventHandler<>() {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("Hello World!");
+                stage.setScene(new Scene(root2, 300, 250));
             }
         });
+
         StackPane root = new StackPane();
         root.getChildren().add(btn);
         stage.setScene(new Scene(root, 300, 250));

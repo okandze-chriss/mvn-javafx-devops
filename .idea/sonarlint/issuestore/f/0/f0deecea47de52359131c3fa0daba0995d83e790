@@ -1,6 +1,6 @@
 
 
-java:S1192"MDefine a constant instead of duplicating this literal "Hello World!" 3 times.(÷¿‡8ˆ´ä°÷1J$938ff06e-9cc2-4e07-9061-aa427bca01ef
+java:S1192"MDefine a constant instead of duplicating this literal "Hello World!" 3 times.(÷¿‡8¿ş®³÷1J$d676b76d-1b66-4309-ad0a-8cb8257c4dac
 k
-java:S1604 "(Make this anonymous inner class a lambda(èŒ—¨8‹´ä°÷1J$d89bc792-0bef-4293-8b96-9c4aec6cd5db
-r	java:S106#"+Replace this use of System.out by a logger.(½¦ÿÿÿÿÿ8Õ´ä°÷1J$e20ef094-783b-432a-b01e-619af25f637d
+java:S1604,"(Make this anonymous inner class a lambda(èŒ—¨8Ãş®³÷1J$a2e3acfb-4b8b-4b91-b318-9b5df7828a8d
+r	java:S106/"+Replace this use of System.out by a logger.(½¦ÿÿÿÿÿ8¤ÿ®³÷1J$b2063591-2d0d-4bc2-a757-b8be2447dda9
